@@ -116,6 +116,35 @@
 		</dependency>
 		
   </dependencies>
+<build>
+  <plugins>
+    <!-- 1. Ouvre le package interne pour Lombok sous JDK ≥9 -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.13.0</version>
+      <configuration>
+        <compilerArgs>
+          <arg>--add-opens</arg>
+          <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+        </compilerArgs>
+        <annotationProcessorPaths>
+          <path>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>  <!-- ou la version que tu utilises -->
+          </path>
+        </annotationProcessorPaths>
+      </configuration>
+    </plugin>
 
+    <!-- 2. Surefire pour tes tests Cucumber -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.1.2</version>
+    </plugin>
+  </plugins>
+</build>
 
 </project>
