@@ -1,17 +1,16 @@
 @commande
-Feature: Feature: Green Card Order Creation  
+Feature: Feature: Green Card Order Creation
   As an insurance company,  
   I want to create an order of 20 green cards  
   So that I can provide them to my insured clients
 
   Background: 
-    Given I open the login page
-    When I enter my email address "amenallah.assurance@yopmail.com" and my password "Test123*"
-    Then I am redirected to the home page
-    When I have added an order from the Orders section
+    Given I enter my email address "amenallah.assurance@yopmail.com" and my password "Test123*"
+    When I am redirected to the home page
 
   Scenario: Successful order creation
-    When I have filled in the required fields to create an order
+    When I have added an order from the Orders section
+    And I have filled in the required fields to create an order
     And I clicked the Save button
     And I submitted the green card order
     And I downloaded the purchase order

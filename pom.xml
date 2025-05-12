@@ -4,19 +4,20 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>api</groupId>
-  <artifactId>autotest</artifactId>
+  <artifactId>avidea</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-
-  <name>autotest</name>
+  <name>avidea</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
   </properties>
 
   <dependencies>
+    <!-- Tes dépendances sont OK -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -24,127 +25,107 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>4.8.3</version>
-</dependency>
-<dependency>
-    <groupId>io.github.bonigarcia</groupId>
-    <artifactId>webdrivermanager</artifactId>
-    <version>5.5.3</version>
-</dependency>
-<dependency>
-    <groupId>tech.grasshopper</groupId>
-    <artifactId>extentreports-cucumber7-adapter</artifactId>
-    <version>1.10.1</version>
-</dependency>
-<dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>5.0.9</version>
-</dependency>
-<dependency>
-
-			<groupId>io.cucumber</groupId>
-
-			<artifactId>cucumber-java</artifactId>
-
-			<version>7.2.3</version>
-
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
-
-		<dependency>
-
-			<groupId>io.cucumber</groupId>
-
-			<artifactId>cucumber-junit</artifactId>
-
-			<version>7.2.3</version>
-
-			<scope>test</scope>
-
-		</dependency>
-		<dependency>
-    <groupId>org.json</groupId>
-    <artifactId>json</artifactId>
-    <version>20240303</version>
-</dependency>
-
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
-
-		<dependency>
-
-			<groupId>io.cucumber</groupId>
-
-			<artifactId>cucumber-core</artifactId>
-
-			<version>7.2.3</version>
-
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-html -->
-
-		<dependency>
-
-			<groupId>io.cucumber</groupId>
-
-			<artifactId>cucumber-html</artifactId>
-
-			<version>0.2.7</version>
-
-		</dependency>
-		<dependency>
-   		 		<groupId>com.sun.mail</groupId>
-    			<artifactId>jakarta.mail</artifactId>
-    			<version>2.0.1</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
-
-		<dependency>
-
-			<groupId>io.cucumber</groupId>
-
-			<artifactId>cucumber-jvm-deps</artifactId>
-
-			<version>1.0.6</version>
-
-			<scope>provided</scope>
-
-		</dependency>
-		
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.8.3</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.5.3</version>
+    </dependency>
+    <dependency>
+      <groupId>tech.grasshopper</groupId>
+      <artifactId>extentreports-cucumber7-adapter</artifactId>
+      <version>1.10.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>5.0.9</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>7.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>7.2.3</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20240303</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-core</artifactId>
+      <version>7.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-html</artifactId>
+      <version>0.2.7</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>jakarta.mail</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-jvm-deps</artifactId>
+      <version>1.0.6</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
-<build>
-  <plugins>
-    <!-- 1. Ouvre le package interne pour Lombok sous JDK ≥9 -->
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-compiler-plugin</artifactId>
-      <version>3.13.0</version>
-      <configuration>
-        <compilerArgs>
-          <arg>--add-opens</arg>
-          <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
-        </compilerArgs>
-        <annotationProcessorPaths>
-          <path>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.26</version>  <!-- ou la version que tu utilises -->
-          </path>
-        </annotationProcessorPaths>
-      </configuration>
-    </plugin>
 
-    <!-- 2. Surefire pour tes tests Cucumber -->
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-surefire-plugin</artifactId>
-      <version>3.1.2</version>
-    </plugin>
-  </plugins>
-</build>
+  <build>
+    <plugins>
+      <!-- ✅ Plugin compiler : Java 21 + Lombok -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.26</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
 
+      <!-- ✅ Plugin de test -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+      </plugin>
+
+      <!-- ✅ Plugin exec pour envoyer l'email -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>send-email</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>Mail.EmailSender</mainClass>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

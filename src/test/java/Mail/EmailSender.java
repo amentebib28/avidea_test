@@ -20,7 +20,7 @@ public class EmailSender {
         final String senderEmail = "test.auto.avidea@gmail.com";
         final String appPassword = "dehzkysdolkycdhl"; 
         final String[] recipientEmails = {
-            "ahmed.ahmedbelghith@gmail.com",
+    
             "amentebib28@gmail.com"
         };
 

@@ -40,7 +40,8 @@ public class AddgcStepDef {
 		addgcpageobject.verifyAddCardSucced();
 	}
 	//Scenario DATA vide 
-	@When("I verify that the Save button is disabled")
+	
+	@Then("I verify that the Save button is disabled")
 	public void je_vérifie_que_le_bouton_Sauvegarder_est_désactivé() {
 	    addgcpageobject.buttonDisable();
 	}

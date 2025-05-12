@@ -8,11 +8,11 @@ import org.openqa.selenium.WebDriver;
 
 import static Utils.DriverManager.getDriver;
 import static Utils.DriverManager.quitDriver;
-
 public class Hooks {
 	@Before
 	public void setUp() {
 		getDriver();
+		getDriver().get("https://test.buat.avidea.tn/#/login");
 	}
 	@After
 	public void tearDown(Scenario scenario) {

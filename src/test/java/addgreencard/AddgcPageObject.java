@@ -195,7 +195,7 @@ public class AddgcPageObject {
       chassis_number.sendKeys(functionRandom(17));
       
       wait.until(ExpectedConditions.visibilityOf(engine_number));
-      engine_number.sendKeys("4342341");
+      engine_number.sendKeys(randomNumber(6));
       
       wait.until(ExpectedConditions.visibilityOf(date.get(4)));
       date.get(4).sendKeys(getDateMinusThree()); 
@@ -295,5 +295,15 @@ public class AddgcPageObject {
 			DateTimeFormatter formatter=DateTimeFormatter.ofPattern("ddMMyyyy");
 			return threeDaysAgo.format(formatter);
 	}
+		public static String randomNumber(int length) {
+			String chars="0123456789";
+			String result="";
+			for(int i=0 ; i<length;i++) {
+				int index = (int)(Math.random() * chars.length());
+		        result += chars.charAt(index);
+			}
+			return result;
+			
+		}
 }
 	
