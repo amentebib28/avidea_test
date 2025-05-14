@@ -6,7 +6,7 @@ Feature: Green Card Creation
 
   Background: 
     Given I enter my email address "agenceamen@yopmail.com" and my password "Amenallah.28"
-    When I am redirected to the home page
+    And I am redirected to the home page
 
   Scenario: Successful green card creation
     When I have added a green card from the Cards section

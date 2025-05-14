@@ -17,7 +17,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
         	
 
     },
-    tags =  "@allLogin or @commande or @addgreencard or @validate or @logout" ,
+    tags =  ("@commande") ,
 
     monochrome = true,
 

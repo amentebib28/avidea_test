@@ -5,21 +5,21 @@ Feature: Login to my account as a user
   @loginAssurance
   Scenario: Login with valid credentials - Assurance
     Given I enter my email address "amenallah.assurance@yopmail.com" and my password "Test123*"
-    When I am redirected to the home page
+    And I am redirected to the home page
 
   @loginBuat
   Scenario: Login with valid credentials - AdminBuat
     Given I enter my email address "ahmed.buat@yopmail.com" and my password "Conan.conan77"
-    When I am redirected to the home page
+    And I am redirected to the home page
 
   @loginAgency
   Scenario: Login with valid credentials - Agency
     Given I enter my email address "agenceamen@yopmail.com" and my password "Amenallah.28"
-    When I am redirected to the home page
+    And I am redirected to the home page
   @loginWithInvalid
   Scenario Outline: 
     Given I enter my "<email>" and "<password>" invalid
-    When I see a "<errorMessage>"
+    And I see a "<errorMessage>"
 
     Examples: 
       | email          | password | errorMessage                      |

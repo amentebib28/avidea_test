@@ -4,7 +4,7 @@ Feature: Faire la déconnexion
 
   Background: 
     Given I enter my email address "amenallah.assurance@yopmail.com" and my password "Test123*"
-    When I am redirected to the home page
+    And I am redirected to the home page
 
   @tagLogout
   Scenario: 

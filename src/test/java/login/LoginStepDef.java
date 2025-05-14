@@ -1,5 +1,6 @@
 package login;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -31,7 +32,7 @@ public class LoginStepDef {
         loginpageobject.button();
     }
 
-    @When("I am redirected to the home page")
+    @And("I am redirected to the home page")
     public void je_suis_redirigé_vers_la_page_d_accueil() {
         loginpageobject.verify_login_succed();
     }
@@ -44,7 +45,7 @@ public class LoginStepDef {
         loginpageobject.button();
     }
 
-    @When("I see a {string}")
+    @And("I see a {string}")
     public void je_vois(String errorMessage) {
         loginpageobject.verify_error_message(errorMessage);
     }

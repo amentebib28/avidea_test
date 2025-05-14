@@ -6,7 +6,7 @@ Feature: Order Management
 
   Background: 
     Given I enter my email address "ahmed.buat@yopmail.com" and my password "Conan.conan77"
-    When I am redirected to the home page
+    And I am redirected to the home page
 
 
   Scenario: Valider une commande
